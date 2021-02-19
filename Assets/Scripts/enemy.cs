@@ -14,7 +14,6 @@ public class enemy : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         target = new Vector3(0, 0, 0);
-        Ignore();
     }
 
     // Update is called once per frame
@@ -25,13 +24,6 @@ public class enemy : MonoBehaviour
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
-    }
-
-    void Ignore()
-    {
-        Physics2D.IgnoreLayerCollision(8, 9);
-        Physics2D.IgnoreLayerCollision(8, 10);
-        Physics2D.IgnoreLayerCollision(9, 10);
     }
 
     private void FixedUpdate()
